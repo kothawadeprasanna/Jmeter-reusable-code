@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Read CSV lines randomly" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.io.BufferedReader; import java.nio.charset.StandardCharsets; import java.nio.file.Files; import java.nio.file.Path; import java.nio.file.Paths; import java.util.ArrayList; import java.util.List;import groovy.json.JsonOutput;
+import java.util.stream.*;
+
+String fpath = vars.get(&quot;basedir&quot;) + vars.get(&quot;fPath_sampleucdmid&quot;); // this is for PCOM execution
+//log.info(&quot;fpath:&quot;+fpath);
+String vvalue=&quot;&quot;;
+String toSampleId=&quot;&quot;;
+//BufferedReader reader = new BufferedReader(new FileReader(fpath));
+String str=null;
+ArrayList&lt;String&gt; lines = new ArrayList&lt;String&gt;();
+//int count=${relative_Count};
+int count = Integer.parseInt(vars.get(&quot;relative_Count&quot;));
+int numberofline = Integer.parseInt(vars.get(&quot;numberofline&quot;));
+
+//In this loop we are reading entire file and storing it in a array, Instead read only required number of lines selecting random lines from the file
+/*
+while((str = reader.readLine()) != null){
+log.info(&quot;****&quot;);
+log.info(str);
+String[] parts = str.split(&quot;,&quot;);
+lines.add(parts[0]);
+}*/
+for(int i=0;i&lt;count;i++){
+int random = new Random().nextInt(numberofline) + 1;
+String line;
+try (Stream&lt;String&gt; linesread = Files.lines(Paths.get(fpath))) {
+line = linesread.skip(random).findFirst().get();
+String[] parts = line.split(&quot;,&quot;);
+lines.add(parts[0]);
+}
+catch(IOException e){
+log.error(e);
+}
+}
+
+//log.info(&quot;Total randlomly selected&quot;+lines.size()+&quot; lines randomly from files are: &quot;+lines);
+
+String[] linesArray = lines.toArray(new String[lines.size()]);
+vvalue = &quot;\&quot;fromSampleId\&quot;: \&quot;&quot;+ vars.get(&quot;sampleid1M&quot;) +&quot;\&quot; , \&quot;toSampleIds\&quot;: [ &quot;
+for(int i=0;i&lt;count;i++)
+{
+toSampleId = toSampleId + &quot;\&quot;&quot;+ linesArray[i]+&quot;\&quot;,&quot;;
+
+
+}
+//log.info(&quot;sampleid&quot; + vars.get(&quot;sampleid1M&quot;) + &quot;ucdmid&quot; + vars.get(&quot;ucdmid1M&quot;));
+toSampleId = toSampleId.substring(0,toSampleId.length()-1)
+//log.info(&quot;toSampleId after -&quot;+toSampleId);
+vvalue = vvalue + toSampleId + &quot;]&quot;
+vars.put(&quot;vvaluedata&quot;,vvalue);
+log.info(&quot;final output 50is: &quot;+ vvalue );
+
+//reader.close();</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="reading JSON data using json parser" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import org.apache.commons.codec.binary.Base64;
+
+try{
+JsonParser parser = new JsonParser();
+
+
+String response = vars.get(&quot;claimToken&quot;);
+//log.info(&quot;response:&quot;+response);
+String[] arr=response.split(&quot;\\.&quot;);
+String actualvalueheader=arr[0].replaceAll(&quot;-&quot;,&quot;+&quot;);
+actualvalueheader=actualvalueheader.replaceAll(&quot;_&quot;,&quot;/&quot;);
+byte[] decoded_responseheader = Base64.decodeBase64(actualvalueheader);
+String json=new String(decoded_responseheader);
+//JsonElement jsonTree = parser.parse(json);
+JsonObject jsonObject = new JsonParser().parse(json).getAsJsonObject();
+String kid = jsonObject.get(&quot;kid&quot;).toString().replace(&quot;\&quot;&quot;,&quot;&quot;);
+//log.info(&quot;kid: &quot;+kid);
+vars.put(&quot;Keyid&quot;,kid);
+}catch(Exception e){
+log.error(&quot;Exception :&quot;+e);
+}</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="write data to beanshell sampler" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">Note: It works only in beanshell sampler
+
+
+
+StoryID = vars.get(&quot;StoryID&quot;);
+source_cluster_id = vars.get(&quot;source_cluster_id&quot;);
+
+log.info(&quot;*********Writing the correct data&quot;);
+
+f = new FileOutputStream(&quot;D:\\Users\\dmandlik\\Documents\\writestoriesdata.csv&quot;,true);
+p = new PrintStream(f);
+this.interpreter.setOut(p);
+print( StoryID + &quot;,&quot; + source_cluster_id);
+f.close();</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Sample If condition " enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script"> //Sample If condition
+
+
+Answer:
+
+&quot;${has_mae_entitlement}&quot;==&quot;true&quot;
+
+with Interpret condition as variable expression checkbox unchecked.
+
+
+
+${__jexl3( ! (&quot;GUID_ERROR&quot;.equals(vars.get(&quot;guid&quot;))) )}
+
+GUID_error is when we dont find this guid correlation
+
+
+
+${__jexl3(vars.get(&quot;testGuids&quot;) != &quot;testGuids_Notfound&quot;)}</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Select random values from the dynamic values" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">// How to select random value from correlated values
+//Answer:
+
+import java.util.Random;
+Random rand = new Random();
+
+int AllValueCount = Integer.parseInt(vars.get(&quot;Asset_GUID_matchNr&quot;));
+int index = rand.nextInt(AllValueCount)+1;
+
+String RandonGUIDFromPP=&quot;Asset_GUID_&quot;+index;
+log.info(&quot;Asset_GUID_rand: &quot;+vars.get(RandonGUIDFromPP));
+vars.put(&quot;RandonGUIDFromPP&quot;,vars.get(RandonGUIDFromPP))</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname=" How to extract particular value from JSON with specific condition on data value " enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">
+
+$.persons[*].events[?(@.eventType==&quot;Death&quot;)].dateYear
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">vars.put(&quot;RegistrationServiceDetails&quot;,&quot;&quot;);
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="false">
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="script">//vars.put(&quot;RegistrationServiceDetails&quot;,&quot;&quot;);
+
+import java.io.*;
+
+String RegistrationServiceDetails=vars.get(&quot;RegistrationServiceDetails&quot;);
+String Filedetails=&quot;C:\\GitHub\\Personal\\Project\\Suflam\\Scripts\\LoadTesting\\TestFragments\\servicedetails.txt&quot;;
+ //FileReader fr = new FileReader(&quot;C:\\GitHub\\Personal\\Project\\Suflam\\Scripts\\LoadTesting\\TestFragments\\servicedetails.txt&quot;);
+  File file = new File(Filedetails);
+  BufferedReader br   = new BufferedReader(new FileReader(file));
+ 
+        // Declaring a string variable
+        String st;
+        // Condition holds true till
+        // there is character in a string
+        String thisservice=&quot;&quot;;
+        while ((st = br.readLine()) != null){
+        	RegistrationServiceDetails=RegistrationServiceDetails+st+&quot;,&quot;;
+   }
+   
+   log.info(RegistrationServiceDetails);
+   vars.put(&quot;RegistrationServiceDetails&quot;,RegistrationServiceDetails);
+   </stringProp>
+          <stringProp name="scriptLanguage">groovy</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="jp@gc - Dummy Sampler" enabled="true">
+          <boolProp name="WAITING">true</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE">200</stringProp>
+          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+          <stringProp name="REQUEST_DATA">{
+	&quot;CreatedBy&quot;: &quot;&quot;,
+	&quot;CreatedDate&quot;: &quot;&quot;,
+	&quot;CreatedFrom&quot;: &quot;&quot;,
+	&quot;ReasonForChange&quot;: &quot;&quot;,
+	&quot;ModifiedBy&quot;: &quot;&quot;,
+	&quot;ModifiedDate&quot;: &quot;&quot;,
+	&quot;ModifiedFrom&quot;: &quot;&quot;,
+	&quot;LabId&quot;: &quot;&quot;,
+	&quot;PreRegisteredLabId&quot;: null,
+	&quot;RegistrationDate&quot;: &quot;${__time(YYYY-MM-dd,)}T${__timeShift(HH:mm:ss,,-PT2H,,)}.521&quot;,
+	&quot;BranchId&quot;: ${BranchID},
+	&quot;IsB2B&quot;: false,
+	&quot;B2BId&quot;: 0,
+	&quot;PatientType&quot;: &quot;&quot;,
+	&quot;PatientLocationId&quot;: null,
+	&quot;PatientId&quot;: null,
+	&quot;TitleId&quot;: 3,
+	&quot;FirstName&quot;: &quot;${FirstName}&quot;,
+	&quot;MiddleName&quot;: &quot;&quot;,
+	&quot;LastName&quot;: &quot;${LastName}&quot;,
+	&quot;BirthDate&quot;: &quot;1989-09-20&quot;,
+	&quot;BirthDateOld&quot;: &quot;&quot;,
+	&quot;IsAgeNotAvailable&quot;: false,
+	&quot;IsLabIdAttachment&quot;: false,
+	&quot;RefId1&quot;: &quot;&quot;,
+	&quot;RefId2&quot;: &quot;&quot;,
+	&quot;PatientPhotograph&quot;: &quot;&quot;,
+	&quot;Mobile&quot;: &quot;${Mobile}&quot;,
+	&quot;Phone&quot;: &quot;&quot;,
+	&quot;EmailId&quot;: &quot;${FirstName}@vaimithra.com&quot;,
+	&quot;CityId&quot;: 12,
+	&quot;AreaId&quot;: null,
+	&quot;Address&quot;: &quot;Nashik&quot;,
+	&quot;Remarks&quot;: &quot;&quot;,
+	&quot;AadharNo&quot;: &quot;&quot;,
+	&quot;DispatchAt&quot;: &quot;&quot;,
+	&quot;RegistrationType&quot;: &quot;R&quot;,
+	&quot;IsToBeInformed&quot;: false,
+	&quot;InformedTo&quot;: &quot;&quot;,
+	&quot;IsToBePosted&quot;: false,
+	&quot;PathologistRemarks&quot;: &quot;&quot;,
+	&quot;TotalAmount&quot;: 0,
+	&quot;MRPAmount&quot;: 0,
+	&quot;DiscountAmount&quot;: 0,
+	&quot;CashBack&quot;: 0,
+	&quot;NetAmount&quot;: 0,
+	&quot;ReceivedAmount&quot;: 0,
+	&quot;ReceivedAmountSaved&quot;: 0,
+	&quot;Height&quot;: null,
+	&quot;Weight&quot;: null,
+	&quot;ProjectId&quot;: null,
+	&quot;ProjectVisitId&quot;: null,
+	&quot;ProjectSiteId&quot;: null,
+	&quot;SubjectNo&quot;: null,
+	&quot;VolunteerRegistrationNo&quot;: null,
+	&quot;PreRegistrationId&quot;: null,
+	&quot;VisitPatientDetailsId&quot;: null,
+	&quot;ConsentFormId&quot;: null,
+	&quot;IPOPFlag&quot;: null,
+	&quot;IPOPNumber&quot;: null,
+	&quot;IntegrationPatientId&quot;: null,
+	&quot;ReceiptRemarks&quot;: null,
+	&quot;ManualReferredBy&quot;: null,
+	&quot;SmartReportStatus&quot;: &quot;N&quot;,
+	&quot;RegistrationServiceDetails&quot;: [${RegistrationServiceDetails}],
+	&quot;RegistrationServiceCancellationDetails&quot;: [],
+	&quot;RegistrationDoctorDetails&quot;: [],
+	&quot;RegistrationDiseaseDetails&quot;: [],
+	&quot;RegistrationDiscountDetails&quot;: [],
+	&quot;RegistrationPaymentDetails&quot;: [],
+	&quot;RegistrationSpecimenDetails&quot;: [],
+	&quot;TRFDetails&quot;: [],
+	&quot;MemberAddressList&quot;: [],
+	&quot;TRFCount&quot;: 0,
+	&quot;ServiceId&quot;: null,
+	&quot;PathologistRemarksCount&quot;: 0,
+	&quot;TechnicialRemarksCount&quot;: 0,
+	&quot;IsTRFVerified&quot;: false,
+	&quot;PatientSourceId&quot;: null,
+	&quot;IsFeedBackRequired&quot;: false,
+	&quot;IsVIPMasking&quot;: false,
+	&quot;PassportNo&quot;: &quot;&quot;,
+	&quot;NationalityId&quot;: null,
+	&quot;DistrictId&quot;: null,
+	&quot;IsSendResultAutoSMSToPatient&quot;: false,
+	&quot;IsSendResultAutoEmailToPatient&quot;: false,
+	&quot;IsB2BShipmentReceived&quot;: false,
+	&quot;EmployeeId&quot;: null,
+	&quot;IsServiceMarkAsHold&quot;: false,
+	&quot;IsUploadToWebPortalIgnore&quot;: false,
+	&quot;ICMRCovidDataId&quot;: null,
+	&quot;B2BName&quot;: &quot;&quot;,
+	&quot;BranchName&quot;: &quot;&quot;,
+	&quot;CityName&quot;: &quot;&quot;,
+	&quot;AreaName&quot;: &quot;&quot;,
+	&quot;TitleName&quot;: &quot;&quot;,
+	&quot;GenderName&quot;: &quot;&quot;,
+	&quot;PatientLocationName&quot;: &quot;&quot;,
+	&quot;PatientName&quot;: &quot;&quot;,
+	&quot;PatientHistoryCount&quot;: null,
+	&quot;selectedOrganCount&quot;: null,
+	&quot;selectedDiagnosisCount&quot;: null,
+	&quot;IsInvoiceProcessed&quot;: false,
+	&quot;BulkRegistrationFileName&quot;: null,
+	&quot;MembershipId&quot;: null,
+	&quot;IntegrationOrderId&quot;: null,
+	&quot;QueueTokenDetailsId&quot;: null,
+	&quot;IsNotCheckForB2BCreditLimit&quot;: false,
+	&quot;IsPatientNameGenderAgeCheckForDuplicate&quot;: false,
+	&quot;PatientDiseasesDetails&quot;: [],
+	&quot;AuthFailCounter&quot;: 0,
+	&quot;IsDriveThrough&quot;: false,
+	&quot;SRFID&quot;: null,
+	&quot;ICMRID&quot;: null,
+	&quot;ICMRDataUploadError&quot;: null,
+	&quot;IsDriveThru&quot;: false,
+	&quot;CRMNo&quot;: null,
+	&quot;Zone&quot;: null,
+	&quot;IsNightCharges&quot;: false,
+	&quot;SmartReportFailCounter&quot;: 0,
+	&quot;SmartReportAPIResponse&quot;: null,
+	&quot;IsCovidVaccinated&quot;: false,
+	&quot;VaccineType&quot;: &quot;&quot;,
+	&quot;VaccineFirstDoseDate&quot;: null,
+	&quot;VaccineSecondDoseDate&quot;: null,
+	&quot;IsAarogyaSetuAppDownloaded&quot;: false,
+	&quot;PatientOccupation&quot;: null,
+	&quot;BleedingTime&quot;: null,
+	&quot;ClottingTime&quot;: null,
+	&quot;MantouxValue&quot;: null,
+	&quot;WareHouseCode&quot;: null,
+	&quot;ClinicId&quot;: null,
+	&quot;InsuranceType&quot;: &quot;C&quot;,
+	&quot;InsuranceCompanyId&quot;: null,
+	&quot;InsuranceNetworkId&quot;: null,
+	&quot;InsuranceAssociateCompanyId&quot;: null,
+	&quot;AgeYYY&quot;: 32,
+	&quot;AgeMM&quot;: null,
+	&quot;AgeDD&quot;: null,
+	&quot;Gender&quot;: &quot;M&quot;
+}</stringProp>
+          <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+          <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+          <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+          <stringProp name="URL"></stringProp>
+          <stringProp name="RESULT_CLASS">org.apache.jmeter.samplers.SampleResult</stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import java.io.*;
+
+String RegistrationServiceDetails=vars.get(&quot;RegistrationServiceDetails&quot;);
+String Filedetails=&quot;C:\\GitHub\\Personal\\Project\\Suflam\\Scripts\\LoadTesting\\TestFragments\\servicedetails.txt&quot;;
+ //FileReader fr = new FileReader(&quot;C:\\GitHub\\Personal\\Project\\Suflam\\Scripts\\LoadTesting\\TestFragments\\servicedetails.txt&quot;);
+  File file = new File(Filedetails);
+  BufferedReader br   = new BufferedReader(new FileReader(file));
+ 
+        // Declaring a string variable
+        String st;
+        // Condition holds true till
+        // there is character in a string
+        while ((st = br.readLine()) != null)
+ 
+            // Print the string
+   log.info(st);
+   </stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">//vars.put(&quot;RegistrationServiceDetails&quot;,&quot;&quot;);
+
+import java.io.*;
+
+String RegistrationServiceDetails=vars.get(&quot;RegistrationServiceDetails&quot;);
+String Filedetails=&quot;C:\\GitHub\\Personal\\Project\\Suflam\\Scripts\\LoadTesting\\TestFragments\\servicedetails.txt&quot;;
+ //FileReader fr = new FileReader(&quot;C:\\GitHub\\Personal\\Project\\Suflam\\Scripts\\LoadTesting\\TestFragments\\servicedetails.txt&quot;);
+  File file = new File(Filedetails);
+  BufferedReader br   = new BufferedReader(new FileReader(file));
+ 
+        // Declaring a string variable
+        String st;
+        // Condition holds true till
+        // there is character in a string
+        String thisservice=&quot;&quot;;
+        while ((st = br.readLine()) != null){
+        	RegistrationServiceDetails=RegistrationServiceDetails+st+&quot;,&quot;;
+   }
+   
+   log.info(RegistrationServiceDetails);
+   vars.put(&quot;RegistrationServiceDetails&quot;,RegistrationServiceDetails);
+   </stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
