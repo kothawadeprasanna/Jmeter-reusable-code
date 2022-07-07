@@ -1,0 +1,42 @@
+ Volume in drive C has no label.
+ Volume Serial Number is C443-7ACA
+
+ Directory of C:\load_test\scenarios\Mail\Transactions
+
+02/13/2017  04:56 AM    <DIR>          .
+02/13/2017  04:56 AM    <DIR>          ..
+02/08/2017  03:13 AM    <DIR>          T10_Agent_Select_Signature
+02/08/2017  03:13 AM    <DIR>          T11_ AddMacro_expandmacro
+02/08/2017  03:13 AM    <DIR>          T12_Agent_Suggested_Response
+02/08/2017  03:13 AM    <DIR>          T13_Add_Content_SaveDraft
+02/08/2017  03:13 AM    <DIR>          T14_Add Attachment
+02/08/2017  03:13 AM    <DIR>          T15_PerformSpellcheck
+02/08/2017  03:13 AM    <DIR>          T16_SendAndComplete
+02/08/2017  03:13 AM    <DIR>          T17_Transfer_To_Queue
+02/08/2017  03:13 AM    <DIR>          T18_Agent_Click_KB_Button
+02/08/2017  03:13 AM    <DIR>          T19_Agent_Expands_Content_folder
+02/08/2017  03:13 AM    <DIR>          T1_Agent_Launch
+02/08/2017  03:13 AM    <DIR>          T20_Agent_Expands_Dept_folder
+02/08/2017  03:13 AM    <DIR>          T21_Agent_Expands_Parent_folder
+02/08/2017  03:13 AM    <DIR>          T22_Agent_Expands_Firstlevel_folder
+02/08/2017  03:13 AM    <DIR>          T23_Agent_Expands_Secondlevel_folder
+02/08/2017  03:13 AM    <DIR>          T24_Agent_Selects_Article1
+02/08/2017  03:13 AM    <DIR>          T25_Agent_Selects_Article2
+02/08/2017  03:13 AM    <DIR>          T26_Agent_Selects_Article3
+02/08/2017  03:13 AM    <DIR>          T27_Agent_Add_Article_ro_reply
+02/08/2017  03:13 AM    <DIR>          T28_ AddNote
+02/08/2017  03:13 AM    <DIR>          T29_InfoPane_Launch_Classification
+02/08/2017  03:13 AM    <DIR>          T2_Agent_Login
+02/08/2017  03:13 AM    <DIR>          T30_InfoPane_Add_Cat_res_Code
+02/08/2017  03:13 AM    <DIR>          T31_ClickMySerach
+02/08/2017  03:13 AM    <DIR>          T32_Agent_Logout
+02/08/2017  03:13 AM    <DIR>          T3_Agent_Enter_Agent_Console
+02/08/2017  03:13 AM    <DIR>          T4_Agent_ClickRefresh_Select_Activity
+02/08/2017  03:13 AM    <DIR>          T5_InfoPane_CustomerHistory
+02/08/2017  03:13 AM    <DIR>          T6_InfoPane_History_Agent_Click_Case
+02/08/2017  03:13 AM    <DIR>          T7_Agent_Select_Footer
+02/08/2017  03:13 AM    <DIR>          T8_Agent_Select_Header
+02/08/2017  03:13 AM    <DIR>          T9_Agent_Select_Greetings
+02/13/2017  04:56 AM                 0 transactions.txt
+               1 File(s)              0 bytes
+              34 Dir(s)  160,731,643,904 bytes free

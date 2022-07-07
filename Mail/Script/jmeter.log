@@ -1,0 +1,55 @@
+2022-01-20 15:37:53,170 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2022-01-20 15:37:53,203 INFO o.a.j.JMeter: Loading user properties from: C:\Software\apache-jmeter-5.4.1\bin\user.properties
+2022-01-20 15:37:53,210 INFO o.a.j.JMeter: Loading system properties from: C:\Software\apache-jmeter-5.4.1\bin\system.properties
+2022-01-20 15:37:53,218 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
+2022-01-20 15:37:53,218 INFO o.a.j.JMeter: Version 5.4.1
+2022-01-20 15:37:53,218 INFO o.a.j.JMeter: java.version=15.0.1
+2022-01-20 15:37:53,218 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2022-01-20 15:37:53,219 INFO o.a.j.JMeter: os.name=Windows 10
+2022-01-20 15:37:53,219 INFO o.a.j.JMeter: os.arch=amd64
+2022-01-20 15:37:53,219 INFO o.a.j.JMeter: os.version=10.0
+2022-01-20 15:37:53,219 INFO o.a.j.JMeter: file.encoding=Cp1252
+2022-01-20 15:37:53,219 INFO o.a.j.JMeter: java.awt.headless=null
+2022-01-20 15:37:53,219 INFO o.a.j.JMeter: Max memory     =2147483648
+2022-01-20 15:37:53,219 INFO o.a.j.JMeter: Available Processors =4
+2022-01-20 15:37:53,228 INFO o.a.j.JMeter: Default Locale=English (EN)
+2022-01-20 15:37:53,229 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2022-01-20 15:37:53,229 INFO o.a.j.JMeter: JMeterHome=C:\Software\apache-jmeter-5.4.1
+2022-01-20 15:37:53,229 INFO o.a.j.JMeter: user.dir  =C:\GitHub\Personal\Jmeter-AdvancedScripts\Mail\Script
+2022-01-20 15:37:53,229 INFO o.a.j.JMeter: PWD       =C:\GitHub\Personal\Jmeter-AdvancedScripts\Mail\Script
+2022-01-20 15:37:53,231 INFO o.a.j.JMeter: IP: 172.31.192.1 Name: SuchitasPC FullName: SuchitasPC.mshome.net
+2022-01-20 15:37:53,368 INFO o.a.j.JMeter: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.IntelliJTheme
+2022-01-20 15:37:56,482 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2022-01-20 15:37:58,128 INFO o.a.j.JMeter: Loading file: Mail.jmx
+2022-01-20 15:37:58,130 INFO o.a.j.s.FileServer: Default base='C:\GitHub\Personal\Jmeter-AdvancedScripts\Mail\Script'
+2022-01-20 15:37:58,131 INFO o.a.j.s.FileServer: Set new base='C:\GitHub\Personal\Jmeter-AdvancedScripts\Mail\Script'
+2022-01-20 15:37:58,215 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=windows_10-ecb29f7891c7d7d09d2c632bee9da313-gui
+2022-01-20 15:37:58,492 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2022-01-20 15:37:58,511 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2022-01-20 15:37:58,513 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2022-01-20 15:37:58,515 INFO o.a.j.s.SaveService: Loading file: Mail.jmx
+2022-01-20 15:37:58,890 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
+2022-01-20 15:37:58,893 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2022-01-20 15:37:58,906 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2022-01-20 15:37:58,907 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2022-01-20 15:37:58,907 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2022-01-20 15:37:58,907 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2022-01-20 15:37:58,907 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2022-01-20 15:37:58,909 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2022-01-20 15:37:59,283 INFO o.a.j.s.FileServer: Set new base='C:\GitHub\Personal\Jmeter-AdvancedScripts\Mail\Script'
+2022-01-20 15:37:59,853 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2022-01-20 15:37:59,853 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2022-01-20 15:37:59,853 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2022-01-20 15:37:59,853 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2022-01-20 15:38:00,075 INFO o.a.j.v.ViewResultsFullVisualizer: Add JavaFX to your Java installation if you want to use renderer: org.apache.jmeter.visualizers.RenderInBrowser
+2022-01-20 15:38:00,851 INFO o.a.j.v.ViewResultsFullVisualizer: Add JavaFX to your Java installation if you want to use renderer: org.apache.jmeter.visualizers.RenderInBrowser
+2022-01-20 15:38:01,393 INFO o.j.r.PluginManager: Plugins Status: [jpgc-graphs-basic=2.0, jpgc-graphs-additional=2.0, jpgc-casutg=2.9, jpgc-dummy=0.4, jpgc-mergeresults=2.1, jpgc-plugins-manager=1.6, jpgc-tst=2.5, jmeter-core=5.4.1, jmeter-ftp=5.4.1, jmeter-http=5.4.1, jmeter-jdbc=5.4.1, jmeter-jms=5.4.1, jmeter-junit=5.4.1, jmeter-java=5.4.1, jmeter-ldap=5.4.1, jmeter-mail=5.4.1, jmeter-mongodb=5.4.1, jmeter-native=5.4.1, jmeter-tcp=5.4.1, jmeter-components=5.4.1]
+2022-01-20 15:38:01,396 INFO o.j.r.PluginManagerMenuItem: Plugins Manager has upgrades: [jpgc-casutg, jpgc-plugins-manager]
+2022-01-20 15:38:01,629 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: C:\GitHub\Personal\Jmeter-AdvancedScripts\Mail\Script\Flows\Case1.jmx
+2022-01-20 15:38:01,630 INFO o.a.j.s.SaveService: Loading file: Flows\Case1.jmx
+2022-01-20 15:38:01,991 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: C:\GitHub\Personal\Jmeter-AdvancedScripts\Mail\Script\Flows\Case2.jmx
+2022-01-20 15:38:01,992 INFO o.a.j.s.SaveService: Loading file: Flows\Case2.jmx
+2022-01-20 15:38:02,109 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: C:\GitHub\Personal\Jmeter-AdvancedScripts\Mail\Script\Flows\Case3.jmx
+2022-01-20 15:38:02,109 INFO o.a.j.s.SaveService: Loading file: Flows\Case3.jmx
+2022-01-20 15:38:02,602 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: C:\GitHub\Personal\Jmeter-AdvancedScripts\Mail\Script\Flows\Case4.jmx
+2022-01-20 15:38:02,603 INFO o.a.j.s.SaveService: Loading file: Flows\Case4.jmx

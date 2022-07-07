@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.9" jmeter="3.1 r1770033">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="[TF]User_Login" enabled="false"/>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller" enabled="true"/>
+        <hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="[TC] T13_Add_Content_SaveDraft" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">true</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="442 /lta/web/controller/mail/agent/reply/savedraftemail.jsp" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="__eg_request_token__" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">__eg_request_token__</stringProp>
+                    <stringProp name="Argument.value">${lt_X-companyname-csrf}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="_reqId_" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">_reqId_</stringProp>
+                    <stringProp name="Argument.value">pl_trcontentmail_0_ms__id12_1476835037633_5</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="activity_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">activity_id</stringProp>
+                    <stringProp name="Argument.value">${lt_inbox_actid_6_g1}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="department_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">department_id</stringProp>
+                    <stringProp name="Argument.value">${lt_dept_id}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="from_email_address" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">from_email_address</stringProp>
+                    <stringProp name="Argument.value">${lt_to_email_address}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="recv_email_address" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">recv_email_address</stringProp>
+                    <stringProp name="Argument.value">${lt_to_email_address}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="to_email_address" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">to_email_address</stringProp>
+                    <stringProp name="Argument.value">${lt_from_email_address}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="cc_email_address" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">cc_email_address</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="bcc_email_address" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">bcc_email_address</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="reply_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">reply_type</stringProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="activity_flag" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">activity_flag</stringProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="save_draft_flag" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">save_draft_flag</stringProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="save_save_draft_flag" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">save_save_draft_flag</stringProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="reply_to_save_draft_flag" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">reply_to_save_draft_flag</stringProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="pageActionFlag" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">pageActionFlag</stringProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="case_flag" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">case_flag</stringProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="email_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">email_id</stringProp>
+                    <stringProp name="Argument.value">-1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="sent_email_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">sent_email_id</stringProp>
+                    <stringProp name="Argument.value">${lt_org_email_id_g2}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="alias_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">alias_id</stringProp>
+                    <stringProp name="Argument.value">${lt_alias_id_g2}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="case_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">case_id</stringProp>
+                    <stringProp name="Argument.value">${lt_inbox_actid_8_g3}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="case_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">case_type</stringProp>
+                    <stringProp name="Argument.value">2</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="customer_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">customer_id</stringProp>
+                    <stringProp name="Argument.value">${lt_inbox_actid_7_g2}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="subject" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">subject</stringProp>
+                    <stringProp name="Argument.value">Re%3A%20Testathon%3A1%20%5B%231026%5D</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="reply_to_email_address" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">reply_to_email_address</stringProp>
+                    <stringProp name="Argument.value">${lt_to_email_address}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="content_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">content_type</stringProp>
+                    <stringProp name="Argument.value">.htm</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="text_content" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">text_content</stringProp>
+                    <stringProp name="Argument.value">Good%20Morning%20%0D%0AHow%20are%20you%20doing%20sir%2Fmadam%0D%0AVodafone%2C%20Virgin%20Media%2C%20Orange%2C%20Bell%20Aliant%2C%203%20Italia%2C%20MTN%2C%20and%2C%20Telecom%20Italia%20Mobile%20have%20one%20thing%20in%20common%E2%80%94they%20all%20rely%20on%20eGain%E2%80%99s%20proven%20and%20innovative%20customer%20service%20solutions.%20eGain%20solutions%20have%20been%20helping%20these%20telecom%20companies%20improve%20contact%20center%20effectiveness%2C%20reduce%20supply%20chain%20costs%2C%20maximize%20ROI%20on%20web%20self-service%2C%20and%20deliver%20consistently%20excellent%20customer%20experience.%0D%0AImprove%20contact%20center%20effectiveness%0D%0AIncrease%20first%20contact%20resolution%20rates%0D%0AReduce%20agent%20training%20time%0D%0AEffectively%20support%20growing%20product%20portfolios%0D%0AReduce%20supply%20chain%20costs%0D%0ASupport%20complex%20diagnostic%20processes%0D%0AReduce%20product%20returns%0D%0AReduce%20field%20service%20visits%0D%0AMaximize%20ROI%20on%20web%20self-service%0D%0AIncrease%20customer%20adoption%0D%0AReduce%20email%20and%20chat%20volume%0D%0AEnsure%20customer%20satisfaction%0D%0ADeliver%20excellent%20customer%20service%0D%0AImprove%20service%20levels%20and%20Net%20Promoter%20Score%20(NPS)%0D%0AOffer%20360-degree%20view%20of%20interactions%20and%20knowledge%20to%20customers%2C%20agents%2C%20store%20personnel%2C%20and%20field%20engineers%0D%0AInteract%20with%20customers%20through%20social%20media%20channels%0D%0AeGain%20%7C%20Gartner%20MQ%20Leader%20%7C%20%231%20Customer%20Engagement%20Cloud%0D%0Awww.eGain.com%0D%0A%0D%0A--Original%20Message--%0D%0AFrom%3A%201475604282502%40companyname-corp.com%0D%0ADate%3A%2010%2F04%2F2016%2011%3A04%20AM%0D%0ATo%3A%20sujit01%40companyname-corp.com%0D%0ASubject%3A%20Testathon%3A1%0D%0A%0D%0AManaging%20access%20to%20your%20databases%0D%0A%0D%0ABuilding%20a%20secure%20and%20reliable%20database%20server%20involves%20both%20appropriate%20security%20means%20to%20be%20applied%20to%20the%20server%20as%20well%20as%20implementation%20of%20planned%20security%20assumptions%20to%20cover%20database%20objects.%20With%20a%20Microsoft%20SQL%20Server%202000%20database%20that%20is%20firmly%20integrated%20with%20the%20Windows%20operating%20system%2C%20you%20can%20attain%20these%20goals%20with%20relatively%20little%20work.%20Let%20us%20therefore%20distinguish%20between%20four%20separate%20levels%20of%20database%20security%20control%20over%20access%20privileges%3A%0D%0A%0D%0A%20%20%20%20*%20Control%20over%20accessing%20the%20database%20at%20the%20server%20level%2C%20which%20applies%20to%20all%20databases.%20An%20appropriate%20configuration%20of%20remote%20access%20(over%20the%20network)%20to%20the%20system%2C%20on%20which%20the%20database%20server%20is%20installed%20-%20assigning%20permissions%20to%20user%20and%20group%20accounts%20in%20line%20with%20the%20organization%E2%80%99s%20security%20policy.%20Configuring%20Web%20servers%20to%20cover%20security%20oversights%20when%20databases%20are%20to%20be%20accessed%20at%20Web%20level%3B%20if%20need%20be%20additional%20security%20solutions%20like%20firewall%20setups%20or%20intrusion%20detection%20systems.%20However%2C%20discussing%20details%20of%20this%20level%20of%20security%20is%20not%20given%20consideration%20in%20this%20article.%20Of%20course%2C%20obtaining%20remote%20access%20to%20a%20system%20running%20SQL%20Server%20does%20not%20yet%20mean%20being%20granted%20access%20to%20the%20database%20server%20itself!%20%20%20%0D%0A%20%20%20%20*%20Control%20over%20accessing%20the%20SQL%20Server%20%E2%80%93%20at%20this%20stage%2C%20you%20can%20control%20access%20to%20databases%20with%20the%20components%20of%20the%20SQL%20Server%20security%20model%20for%20users%20that%20can%20access%20the%20server%20but%20not%20log%20in%20to%20the%20database%20server.%20Logging%20in%20to%20SQL%20Server%20gives%20a%20user%20permission%20to%20connect%20to%20SQL%20Server%20and%20work%20with%20minimum%20privileges%20in%20the%20master%20database%20but%20not%20to%20access%20all%20databases.%0D%0A%20%20%20%20*%20Regulating%20access%20to%20the%20SQL%20Server%20database%20is%20the%20next%20level%20of%20SQL%20Server%20security%20%E2%80%93%20each%20database%20managed%20by%20SQL%20Server%20has%20a%20list%20of%20valid%20users%20authorized%20to%20access%20it%20and%20using%20their%20logins%20to%20connect%20the%20server.%20Database%20administrators%20can%20set%20up%20logins%20and%20users%20in%20databases%20giving%20them%20permissions%20in%20accordance%20with%20the%20organization%E2%80%99s%20security%20policy.%20Each%20newly%20added%20user%20is%20given%20specific%20permissions%20that%20are%20valid%20for%20specific%20databases.%20In%20this%20manner%2C%20a%20user%20may%20obtain%2C%20for%20example%2C%20an%20administrator%20privilege%20(in%20the%20X%20database)%20whilst%20being%20a%20%E2%80%9Cnormal%E2%80%9D%20user%20(in%20the%20Y%20database)%20with%20no%20need%20to%20log%20in%20to%20these%20databases%20separately.%20The%20name%20of%20the%20database%20user%20is%20guest%2C%20and%20this%20guest%20account%20is%20used%20for%20logins%20without%20a%20user%20account%20of%20their%20own%20in%20a%20database.%20An%20SQL%20Server%20login%20has%20no%20rights%20to%20a%20database%20until%20you%20set%20up%20the%20login%20as%20a%20user%20of%20that%20database.%20The%20right%20to%20access%20a%20specific%20database%20does%20not%20automatically%20imply%20the%20right%20to%20execute%20any%20SQL%20(Structured%20Query%20Language)%20command%20on%20any%20database%20object.%20%20%20%0D%0A%20%20%20%20*%20The%20fourth%20level%20lets%20you%20assign%20permissions%20on%20objects%20in%20a%20database%3B%20for%20example%2C%20you%20can%20specify%20which%20tables%20or%20stored%20procedures%20a%20user%20can%20run%20and%20which%20views%20he%20can%20see.%20In%20fact%2C%20this%20means%20giving%20the%20user%20specific%20permissions%20to%20execute%20certain%20SQL%20commands%20on%20defined%20objects%20of%20the%20database.</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="str_content" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">str_content</stringProp>
+                    <stringProp name="Argument.value">%3C!DOCTYPE%20HTML%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20HTML%204.0%20Transitional%2F%2FEN%22%3E%20%3CHTML%3E%20%3CHEAD%3E%20%3CTITLE%3E%20%3C%2FTITLE%3E%20%3C%2FHEAD%3E%20%3Cbody%3E%3CDIV%20id%3D%22eGainmsgDIV23%22%20style%3D%22font-family%3ASegoe%20UI%3Bfont-size%3A10pt%22%3E%3Chead%3E%0D%0A%3CMETA%20name%3DGENERATOR%20content%3D%22MSHTML%2011.00.9600.18427%22%3E%3C%2Fhead%3E%3Cbody%3E%3CP%3EGood%20Morning%20%3C%2FP%3E%0D%0A%3CP%3EHow%20are%20you%20doing%20sir%2Fmadam%3C%2FP%3E%0D%0A%3CP%20style%3D%22FONT-SIZE%3A%2015px%3B%20BORDER-TOP%3A%200px%3B%20FONT-FAMILY%3A%20&apos;cabin%20condensed&apos;%20%2C%20sans-serif%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20WHITE-SPACE%3A%20normal%3B%20WORD-SPACING%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20TEXT-TRANSFORM%3A%20none%3B%20FONT-WEIGHT%3A%20normal%3B%20COLOR%3A%20rgb(57%2C57%2C57)%3B%20PADDING-BOTTOM%3A%200px%3B%20FONT-STYLE%3A%20normal%3B%20TEXT-ALIGN%3A%20left%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%2012px%200px%200px%3B%20BORDER-LEFT%3A%200px%3B%20LETTER-SPACING%3A%20normal%3B%20LINE-HEIGHT%3A%2022px%3B%20PADDING-RIGHT%3A%200px%3B%20TEXT-INDENT%3A%200px%22%3EVodafone%2C%20Virgin%20Media%2C%20Orange%2C%20Bell%20Aliant%2C%203%20Italia%2C%20MTN%2C%20and%2C%20Telecom%20Italia%20Mobile%20have%20one%20thing%20in%20common%E2%80%94they%20all%20rely%20on%20eGain%E2%80%99s%20proven%20and%20innovative%20customer%20service%20solutions.%20eGain%20solutions%20have%20been%20helping%20these%20telecom%20companies%20improve%20contact%20center%20effectiveness%2C%20reduce%20supply%20chain%20costs%2C%20maximize%20ROI%20on%20web%20self-service%2C%20and%20deliver%20consistently%20excellent%20customer%20experience.%3C%2FP%3E%0D%0A%3CH3%20style%3D%22FONT-SIZE%3A%2018px%3B%20BORDER-TOP%3A%200px%3B%20FONT-FAMILY%3A%20&apos;open%20sans%20condensed&apos;%20%2C%20sans-serif%20%2C%20&apos;helvetica%20neue&apos;%20%2C%20&apos;arial&apos;%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20WHITE-SPACE%3A%20normal%3B%20WORD-SPACING%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20TEXT-TRANSFORM%3A%20none%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(65%2C65%2C65)%3B%20PADDING-BOTTOM%3A%200px%3B%20FONT-STYLE%3A%20normal%3B%20TEXT-ALIGN%3A%20left%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%2018px%2012pt%205px%200px%3B%20BORDER-LEFT%3A%200px%3B%20LETTER-SPACING%3A%20normal%3B%20LINE-HEIGHT%3A%2022px%3B%20PADDING-RIGHT%3A%200px%3B%20TEXT-INDENT%3A%200px%22%3EImprove%20contact%20center%20effectiveness%3C%2FH3%3E%0D%0A%3CUL%20style%3D%22LIST-STYLE-TYPE%3A%20disc%3B%20FONT-SIZE%3A%2013px%3B%20BORDER-TOP%3A%200px%3B%20FONT-FAMILY%3A%20&apos;open%20sans&apos;%20%2C%20sans-serif%20%2C%20&apos;helvetica%20neue&apos;%20%2C%20&apos;arial&apos;%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20WHITE-SPACE%3A%20normal%3B%20WORD-SPACING%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20TEXT-TRANSFORM%3A%20none%3B%20FONT-WEIGHT%3A%20normal%3B%20COLOR%3A%20rgb(57%2C57%2C57)%3B%20PADDING-BOTTOM%3A%200px%3B%20FONT-STYLE%3A%20normal%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%200px%2012pt%2012pt%200px%3B%20BORDER-LEFT%3A%200px%3B%20LETTER-SPACING%3A%20normal%3B%20PADDING-RIGHT%3A%200px%3B%20TEXT-INDENT%3A%200px%22%3E%0D%0A%3CLI%20style%3D%22BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20BORDER-BOTTOM%3A%200px%3B%20PADDING-BOTTOM%3A%200px%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%207px%2012pt%200px%2020px%3B%20BORDER-LEFT%3A%200px%3B%20PADDING-RIGHT%3A%200px%22%3E%3CA%20style%3D%22TEXT-DECORATION%3A%20none%3B%20BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(0%2C171%2C207)%3B%20FONT-STYLE%3A%20normal%3B%20BORDER-LEFT%3A%200px%3B%20LINE-HEIGHT%3A%201.2em%22%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fsolutions%2Ftelecom%2Ftelecom-increase-first-contact-resolution-rates%2F%22%20target%3D_blank%3EIncrease%20first%20contact%20resolution%20rates%3C%2FA%3E%0D%0A%3CLI%20style%3D%22BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20BORDER-BOTTOM%3A%200px%3B%20PADDING-BOTTOM%3A%200px%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%207px%2012pt%200px%2020px%3B%20BORDER-LEFT%3A%200px%3B%20PADDING-RIGHT%3A%200px%22%3E%3CA%20style%3D%22TEXT-DECORATION%3A%20none%3B%20BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(0%2C171%2C207)%3B%20FONT-STYLE%3A%20normal%3B%20BORDER-LEFT%3A%200px%3B%20LINE-HEIGHT%3A%201.2em%22%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fsolutions%2Ftelecom%2Ftelecom-reduce-agent-training-time%2F%22%3EReduce%20agent%20training%20time%3C%2FA%3E%0D%0A%3CLI%20style%3D%22BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20BORDER-BOTTOM%3A%200px%3B%20PADDING-BOTTOM%3A%200px%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%207px%2012pt%200px%2020px%3B%20BORDER-LEFT%3A%200px%3B%20PADDING-RIGHT%3A%200px%22%3E%3CA%20style%3D%22TEXT-DECORATION%3A%20none%3B%20BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(0%2C171%2C207)%3B%20FONT-STYLE%3A%20normal%3B%20BORDER-LEFT%3A%200px%3B%20LINE-HEIGHT%3A%201.2em%22%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fsolutions%2Ftelecom%2Ftelecom-effectively-support-growing-product-portfolios%2F%22%3EEffectively%20support%20growing%20product%20portfolios%3C%2FA%3E%3C%2FLI%3E%3C%2FUL%3E%0D%0A%3CH3%20style%3D%22FONT-SIZE%3A%2018px%3B%20BORDER-TOP%3A%200px%3B%20FONT-FAMILY%3A%20&apos;open%20sans%20condensed&apos;%20%2C%20sans-serif%20%2C%20&apos;helvetica%20neue&apos;%20%2C%20&apos;arial&apos;%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20WHITE-SPACE%3A%20normal%3B%20WORD-SPACING%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20TEXT-TRANSFORM%3A%20none%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(65%2C65%2C65)%3B%20PADDING-BOTTOM%3A%200px%3B%20FONT-STYLE%3A%20normal%3B%20TEXT-ALIGN%3A%20left%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%2018px%2012pt%205px%200px%3B%20BORDER-LEFT%3A%200px%3B%20LETTER-SPACING%3A%20normal%3B%20LINE-HEIGHT%3A%2022px%3B%20PADDING-RIGHT%3A%200px%3B%20TEXT-INDENT%3A%200px%22%3EReduce%20supply%20chain%20costs%3C%2FH3%3E%0D%0A%3CUL%20style%3D%22LIST-STYLE-TYPE%3A%20disc%3B%20FONT-SIZE%3A%2013px%3B%20BORDER-TOP%3A%200px%3B%20FONT-FAMILY%3A%20&apos;open%20sans&apos;%20%2C%20sans-serif%20%2C%20&apos;helvetica%20neue&apos;%20%2C%20&apos;arial&apos;%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20WHITE-SPACE%3A%20normal%3B%20WORD-SPACING%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20TEXT-TRANSFORM%3A%20none%3B%20FONT-WEIGHT%3A%20normal%3B%20COLOR%3A%20rgb(57%2C57%2C57)%3B%20PADDING-BOTTOM%3A%200px%3B%20FONT-STYLE%3A%20normal%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%200px%2012pt%2012pt%200px%3B%20BORDER-LEFT%3A%200px%3B%20LETTER-SPACING%3A%20normal%3B%20PADDING-RIGHT%3A%200px%3B%20TEXT-INDENT%3A%200px%22%3E%0D%0A%3CLI%20style%3D%22BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20BORDER-BOTTOM%3A%200px%3B%20PADDING-BOTTOM%3A%200px%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%207px%2012pt%200px%2020px%3B%20BORDER-LEFT%3A%200px%3B%20PADDING-RIGHT%3A%200px%22%3E%3CA%20style%3D%22TEXT-DECORATION%3A%20none%3B%20BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(0%2C171%2C207)%3B%20FONT-STYLE%3A%20normal%3B%20BORDER-LEFT%3A%200px%3B%20LINE-HEIGHT%3A%201.2em%22%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fsolutions%2Ftelecom%2Ftelecom-support-complex-diagnostic-processes%2F%22%3ESupport%20complex%20diagnostic%20processes%3C%2FA%3E%0D%0A%3CLI%20style%3D%22BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20BORDER-BOTTOM%3A%200px%3B%20PADDING-BOTTOM%3A%200px%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%207px%2012pt%200px%2020px%3B%20BORDER-LEFT%3A%200px%3B%20PADDING-RIGHT%3A%200px%22%3E%3CA%20style%3D%22TEXT-DECORATION%3A%20none%3B%20BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(0%2C171%2C207)%3B%20FONT-STYLE%3A%20normal%3B%20BORDER-LEFT%3A%200px%3B%20LINE-HEIGHT%3A%201.2em%22%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fsolutions%2Ftelecom%2Ftelecom-reduce-product-returns%2F%22%3EReduce%20product%20returns%3C%2FA%3E%0D%0A%3CLI%20style%3D%22BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20BORDER-BOTTOM%3A%200px%3B%20PADDING-BOTTOM%3A%200px%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%207px%2012pt%200px%2020px%3B%20BORDER-LEFT%3A%200px%3B%20PADDING-RIGHT%3A%200px%22%3E%3CA%20style%3D%22TEXT-DECORATION%3A%20none%3B%20BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(0%2C171%2C207)%3B%20FONT-STYLE%3A%20normal%3B%20BORDER-LEFT%3A%200px%3B%20LINE-HEIGHT%3A%201.2em%22%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fsolutions%2Ftelecom%2Ftelecom-reduce-field-service-visits%2F%22%3EReduce%20field%20service%20visits%3C%2FA%3E%3C%2FLI%3E%3C%2FUL%3E%0D%0A%3CH3%20style%3D%22FONT-SIZE%3A%2018px%3B%20BORDER-TOP%3A%200px%3B%20FONT-FAMILY%3A%20&apos;open%20sans%20condensed&apos;%20%2C%20sans-serif%20%2C%20&apos;helvetica%20neue&apos;%20%2C%20&apos;arial&apos;%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20WHITE-SPACE%3A%20normal%3B%20WORD-SPACING%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20TEXT-TRANSFORM%3A%20none%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(65%2C65%2C65)%3B%20PADDING-BOTTOM%3A%200px%3B%20FONT-STYLE%3A%20normal%3B%20TEXT-ALIGN%3A%20left%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%2018px%2012pt%205px%200px%3B%20BORDER-LEFT%3A%200px%3B%20LETTER-SPACING%3A%20normal%3B%20LINE-HEIGHT%3A%2022px%3B%20PADDING-RIGHT%3A%200px%3B%20TEXT-INDENT%3A%200px%22%3EMaximize%20ROI%20on%20web%20self-service%3C%2FH3%3E%0D%0A%3CUL%20style%3D%22LIST-STYLE-TYPE%3A%20disc%3B%20FONT-SIZE%3A%2013px%3B%20BORDER-TOP%3A%200px%3B%20FONT-FAMILY%3A%20&apos;open%20sans&apos;%20%2C%20sans-serif%20%2C%20&apos;helvetica%20neue&apos;%20%2C%20&apos;arial&apos;%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20WHITE-SPACE%3A%20normal%3B%20WORD-SPACING%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20TEXT-TRANSFORM%3A%20none%3B%20FONT-WEIGHT%3A%20normal%3B%20COLOR%3A%20rgb(57%2C57%2C57)%3B%20PADDING-BOTTOM%3A%200px%3B%20FONT-STYLE%3A%20normal%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%200px%2012pt%2012pt%200px%3B%20BORDER-LEFT%3A%200px%3B%20LETTER-SPACING%3A%20normal%3B%20PADDING-RIGHT%3A%200px%3B%20TEXT-INDENT%3A%200px%22%3E%0D%0A%3CLI%20style%3D%22BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20BORDER-BOTTOM%3A%200px%3B%20PADDING-BOTTOM%3A%200px%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%207px%2012pt%200px%2020px%3B%20BORDER-LEFT%3A%200px%3B%20PADDING-RIGHT%3A%200px%22%3E%3CA%20style%3D%22TEXT-DECORATION%3A%20none%3B%20BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(0%2C171%2C207)%3B%20FONT-STYLE%3A%20normal%3B%20BORDER-LEFT%3A%200px%3B%20LINE-HEIGHT%3A%201.2em%22%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fsolutions%2Ftelecom%2Ftelecom-increase-customer-adoption%2F%22%3EIncrease%20customer%20adoption%3C%2FA%3E%0D%0A%3CLI%20style%3D%22BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20BORDER-BOTTOM%3A%200px%3B%20PADDING-BOTTOM%3A%200px%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%207px%2012pt%200px%2020px%3B%20BORDER-LEFT%3A%200px%3B%20PADDING-RIGHT%3A%200px%22%3E%3CA%20style%3D%22TEXT-DECORATION%3A%20none%3B%20BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(0%2C171%2C207)%3B%20FONT-STYLE%3A%20normal%3B%20BORDER-LEFT%3A%200px%3B%20LINE-HEIGHT%3A%201.2em%22%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fsolutions%2Ftelecom%2Ftelecom-reduce-email-and-chat-volume%2F%22%3EReduce%20email%20and%20chat%20volume%3C%2FA%3E%0D%0A%3CLI%20style%3D%22BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20BORDER-BOTTOM%3A%200px%3B%20PADDING-BOTTOM%3A%200px%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%207px%2012pt%200px%2020px%3B%20BORDER-LEFT%3A%200px%3B%20PADDING-RIGHT%3A%200px%22%3E%3CA%20style%3D%22TEXT-DECORATION%3A%20none%3B%20BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(0%2C171%2C207)%3B%20FONT-STYLE%3A%20normal%3B%20BORDER-LEFT%3A%200px%3B%20LINE-HEIGHT%3A%201.2em%22%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fsolutions%2Ftelecom%2Ftelecom-ensure-customer-satisfaction%2F%22%3EEnsure%20customer%20satisfaction%3C%2FA%3E%3C%2FLI%3E%3C%2FUL%3E%0D%0A%3CH3%20style%3D%22FONT-SIZE%3A%2018px%3B%20BORDER-TOP%3A%200px%3B%20FONT-FAMILY%3A%20&apos;open%20sans%20condensed&apos;%20%2C%20sans-serif%20%2C%20&apos;helvetica%20neue&apos;%20%2C%20&apos;arial&apos;%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20WHITE-SPACE%3A%20normal%3B%20WORD-SPACING%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20TEXT-TRANSFORM%3A%20none%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(65%2C65%2C65)%3B%20PADDING-BOTTOM%3A%200px%3B%20FONT-STYLE%3A%20normal%3B%20TEXT-ALIGN%3A%20left%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%2018px%2012pt%205px%200px%3B%20BORDER-LEFT%3A%200px%3B%20LETTER-SPACING%3A%20normal%3B%20LINE-HEIGHT%3A%2022px%3B%20PADDING-RIGHT%3A%200px%3B%20TEXT-INDENT%3A%200px%22%3EDeliver%20excellent%20customer%20service%3C%2FH3%3E%0D%0A%3CUL%20style%3D%22LIST-STYLE-TYPE%3A%20disc%3B%20FONT-SIZE%3A%2013px%3B%20BORDER-TOP%3A%200px%3B%20FONT-FAMILY%3A%20&apos;open%20sans&apos;%20%2C%20sans-serif%20%2C%20&apos;helvetica%20neue&apos;%20%2C%20&apos;arial&apos;%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20WHITE-SPACE%3A%20normal%3B%20WORD-SPACING%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20TEXT-TRANSFORM%3A%20none%3B%20FONT-WEIGHT%3A%20normal%3B%20COLOR%3A%20rgb(57%2C57%2C57)%3B%20PADDING-BOTTOM%3A%200px%3B%20FONT-STYLE%3A%20normal%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%200px%2012pt%2012pt%200px%3B%20BORDER-LEFT%3A%200px%3B%20LETTER-SPACING%3A%20normal%3B%20PADDING-RIGHT%3A%200px%3B%20TEXT-INDENT%3A%200px%22%3E%0D%0A%3CLI%20style%3D%22BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20BORDER-BOTTOM%3A%200px%3B%20PADDING-BOTTOM%3A%200px%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%207px%2012pt%200px%2020px%3B%20BORDER-LEFT%3A%200px%3B%20PADDING-RIGHT%3A%200px%22%3E%3CA%20style%3D%22TEXT-DECORATION%3A%20none%3B%20BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(0%2C171%2C207)%3B%20FONT-STYLE%3A%20normal%3B%20BORDER-LEFT%3A%200px%3B%20LINE-HEIGHT%3A%201.2em%22%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fsolutions%2Ftelecom%2Ftelecom-improve-service-levels-and-net-promoter-score-nps%2F%22%3EImprove%20service%20levels%20and%20Net%20Promoter%20Score%20(NPS)%3C%2FA%3E%0D%0A%3CLI%20style%3D%22BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20BORDER-BOTTOM%3A%200px%3B%20PADDING-BOTTOM%3A%200px%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%207px%2012pt%200px%2020px%3B%20BORDER-LEFT%3A%200px%3B%20PADDING-RIGHT%3A%200px%22%3E%3CA%20style%3D%22TEXT-DECORATION%3A%20none%3B%20BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(0%2C171%2C207)%3B%20FONT-STYLE%3A%20normal%3B%20BORDER-LEFT%3A%200px%3B%20LINE-HEIGHT%3A%201.2em%22%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fsolutions%2Ftelecom%2Ftelecom-offer-360-degree-view-of-interactions-and-knowledge-to-customers-agents-store-personnel-and-field-managers%2F%22%3EOffer%20360-degree%20view%20of%20interactions%20and%20knowledge%20to%20customers%2C%20agents%2C%20store%20personnel%2C%20and%20field%20engineers%3C%2FA%3E%0D%0A%3CLI%20style%3D%22BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20VERTICAL-ALIGN%3A%20baseline%3B%20BORDER-BOTTOM%3A%200px%3B%20PADDING-BOTTOM%3A%200px%3B%20PADDING-TOP%3A%200px%3B%20PADDING-LEFT%3A%200px%3B%20MARGIN%3A%207px%2012pt%200px%2020px%3B%20BORDER-LEFT%3A%200px%3B%20PADDING-RIGHT%3A%200px%22%3E%3CA%20style%3D%22TEXT-DECORATION%3A%20none%3B%20BORDER-TOP%3A%200px%3B%20BORDER-RIGHT%3A%200px%3B%20BORDER-BOTTOM%3A%200px%3B%20FONT-WEIGHT%3A%20bold%3B%20COLOR%3A%20rgb(0%2C171%2C207)%3B%20FONT-STYLE%3A%20normal%3B%20BORDER-LEFT%3A%200px%3B%20LINE-HEIGHT%3A%201.2em%22%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fsolutions%2Ftelecom%2Ftelecom-interact-with-customers-through-social-media-channels%2F%22%3EInteract%20with%20customers%20through%20social%20media%20channels%3C%2FA%3E%3C%2FLI%3E%3C%2FUL%3E%0D%0A%3CP%3E%3CA%20href%3D%22http%3A%2F%2Fwww.companyname.com%2F%22%3EeGain%3C%2FA%3E%20%7C%20%3CA%20href%3D%22http%3A%2F%2Fwww.companyname.com%2Fcompany%2Fnews%2Fpress_releases%2Fcompanyname-positioned-in-the-leaders-quadrant-of-the-magic-quadrant-for-crm-web-customer-service-applications%2F%22%3EGartner%20MQ%20Leader%3C%2FA%3E%20%7C%20%231%20Customer%20Engagement%20Cloud%3C%2FP%3E%0D%0A%3CP%3E%3CA%20href%3D%22http%3A%2F%2Fwww.companyname.com%2F%22%3Ewww.eGain.com%3C%2FA%3E%3C%2FP%3E%3CBR%3E--Original%20Message--%3CBR%3EFrom%3A%201475604282502%40companyname-corp.com%3CBR%3EDate%3A%2010%2F04%2F2016%2011%3A04%20AM%3CBR%3ETo%3A%20sujit01%40companyname-corp.com%3CBR%3ESubject%3A%20Testathon%3A1%3CBR%3E%3CBR%3EManaging%20access%20to%20your%20databases%3CBR%3E%3CBR%3EBuilding%20a%20secure%20and%20reliable%20database%20server%20involves%20both%20appropriate%20security%20means%20to%20be%20applied%20to%20the%20server%20as%20well%20as%20implementation%20of%20planned%20security%20assumptions%20to%20cover%20database%20objects.%20With%20a%20Microsoft%20SQL%20Server%202000%20database%20that%20is%20firmly%20integrated%20with%20the%20Windows%20operating%20system%2C%20you%20can%20attain%20these%20goals%20with%20relatively%20little%20work.%20Let%20us%20therefore%20distinguish%20between%20four%20separate%20levels%20of%20database%20security%20control%20over%20access%20privileges%3A%3CBR%3E%3CBR%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%20*%20Control%20over%20accessing%20the%20database%20at%20the%20server%20level%2C%20which%20applies%20to%20all%20databases.%20An%20appropriate%20configuration%20of%20remote%20access%20(over%20the%20network)%20to%20the%20system%2C%20on%20which%20the%20database%20server%20is%20installed%20-%20assigning%20permissions%20to%20user%20and%20group%20accounts%20in%20line%20with%20the%20organization%E2%80%99s%20security%20policy.%20Configuring%20Web%20servers%20to%20cover%20security%20oversights%20when%20databases%20are%20to%20be%20accessed%20at%20Web%20level%3B%20if%20need%20be%20additional%20security%20solutions%20like%20firewall%20setups%20or%20intrusion%20detection%20systems.%20However%2C%20discussing%20details%20of%20this%20level%20of%20security%20is%20not%20given%20consideration%20in%20this%20article.%20Of%20course%2C%20obtaining%20remote%20access%20to%20a%20system%20running%20SQL%20Server%20does%20not%20yet%20mean%20being%20granted%20access%20to%20the%20database%20server%20itself!%26nbsp%3B%26nbsp%3B%20%3CBR%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%20*%20Control%20over%20accessing%20the%20SQL%20Server%20%E2%80%93%20at%20this%20stage%2C%20you%20can%20control%20access%20to%20databases%20with%20the%20components%20of%20the%20SQL%20Server%20security%20model%20for%20users%20that%20can%20access%20the%20server%20but%20not%20log%20in%20to%20the%20database%20server.%20Logging%20in%20to%20SQL%20Server%20gives%20a%20user%20permission%20to%20connect%20to%20SQL%20Server%20and%20work%20with%20minimum%20privileges%20in%20the%20master%20database%20but%20not%20to%20access%20all%20databases.%3CBR%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%20*%20Regulating%20access%20to%20the%20SQL%20Server%20database%20is%20the%20next%20level%20of%20SQL%20Server%20security%20%E2%80%93%20each%20database%20managed%20by%20SQL%20Server%20has%20a%20list%20of%20valid%20users%20authorized%20to%20access%20it%20and%20using%20their%20logins%20to%20connect%20the%20server.%20Database%20administrators%20can%20set%20up%20logins%20and%20users%20in%20databases%20giving%20them%20permissions%20in%20accordance%20with%20the%20organization%E2%80%99s%20security%20policy.%20Each%20newly%20added%20user%20is%20given%20specific%20permissions%20that%20are%20valid%20for%20specific%20databases.%20In%20this%20manner%2C%20a%20user%20may%20obtain%2C%20for%20example%2C%20an%20administrator%20privilege%20(in%20the%20X%20database)%20whilst%20being%20a%20%E2%80%9Cnormal%E2%80%9D%20user%20(in%20the%20Y%20database)%20with%20no%20need%20to%20log%20in%20to%20these%20databases%20separately.%20The%20name%20of%20the%20database%20user%20is%20guest%2C%20and%20this%20guest%20account%20is%20used%20for%20logins%20without%20a%20user%20account%20of%20their%20own%20in%20a%20database.%20An%20SQL%20Server%20login%20has%20no%20rights%20to%20a%20database%20until%20you%20set%20up%20the%20login%20as%20a%20user%20of%20that%20database.%20The%20right%20to%20access%20a%20specific%20database%20does%20not%20automatically%20imply%20the%20right%20to%20execute%20any%20SQL%20(Structured%20Query%20Language)%20command%20on%20any%20database%20object.%26nbsp%3B%26nbsp%3B%20%3CBR%3E%26nbsp%3B%26nbsp%3B%26nbsp%3B%20*%20The%20fourth%20level%20lets%20you%20assign%20permissions%20on%20objects%20in%20a%20database%3B%20for%20example%2C%20you%20can%20specify%20which%20tables%20or%20stored%20procedures%20a%20user%20can%20run%20and%20which%20views%20he%20can%20see.%20In%20fact%2C%20this%20means%20giving%20the%20user%20specific%20permissions%20to%20execute%20certain%20SQL%20commands%20on%20defined%20objects%20of%20the%20database.%3C%2Fbody%3E%3C%2FDIV%3E%3C%2FBODY%3E%20%3C%2FHTML%3E</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="charset" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">charset</stringProp>
+                    <stringProp name="Argument.value">UTF-8</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="activity_complete_flag" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">activity_complete_flag</stringProp>
+                    <stringProp name="Argument.value">false</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="categoryIds" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">categoryIds</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="num_categoryIds" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">num_categoryIds</stringProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="rescodeIds" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">rescodeIds</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="num_rescodeIds" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">num_rescodeIds</stringProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="note_types" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">note_types</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="note_ids" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">note_ids</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="num_notes" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">num_notes</stringProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="language" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">language</stringProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="country" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">country</stringProp>
+                    <stringProp name="Argument.value">us</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="queue_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">queue_id</stringProp>
+                    <stringProp name="Argument.value">${lt_queue_ids_g5}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="emailAttachmentIds" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">emailAttachmentIds</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="activityId" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">activityId</stringProp>
+                    <stringProp name="Argument.value">${lt_inbox_actid_6_g1}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="attachments" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">attachments</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="num_attachments" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">num_attachments</stringProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="event_duaration" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">event_duaration</stringProp>
+                    <stringProp name="Argument.value">94</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="drag_drop_article_ids" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">drag_drop_article_ids</stringProp>
+                    <stringProp name="Argument.value">400000000067032</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="HFGS_article_ids" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">HFGS_article_ids</stringProp>
+                    <stringProp name="Argument.value">${lt_header_art_id},${lt_footer_art_id},${lt_sign_art_id},${lt_greet_art_id}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="cust_departmentalized" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">cust_departmentalized</stringProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="currentActivityId" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">currentActivityId</stringProp>
+                    <stringProp name="Argument.value">${lt_inbox_actid_6_g1}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="article_ids" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">article_ids</stringProp>
+                    <stringProp name="Argument.value">400000000067032,${lt_header_art_id},${lt_footer_art_id},${lt_sign_art_id},${lt_greet_art_id}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="compose_save_draft_flag" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">compose_save_draft_flag</stringProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="reAttemptFlag" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">reAttemptFlag</stringProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="macroArticleIds" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">macroArticleIds</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="activity_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">activity_type</stringProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="activity_sub_type" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">activity_sub_type</stringProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="calltrack_flag" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">calltrack_flag</stringProp>
+                    <stringProp name="Argument.value">false</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="language_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">language_id</stringProp>
+                    <stringProp name="Argument.value">4</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${lt_server_name}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/lta/web/controller/mail/agent/reply/savedraftemail.jsp</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-us</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">*/*</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko</stringProp>
+                  </elementProp>
+                  <elementProp name="DNT" elementType="Header">
+                    <stringProp name="Header.name">DNT</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Pragma" elementType="Header">
+                    <stringProp name="Header.name">Pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="X-Requested-With" elementType="Header">
+                    <stringProp name="Header.name">X-Requested-With</stringProp>
+                    <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://${lt_server_name}/lta/web/view/mail/agent/reply/replybody.htm</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+                <stringProp name="ConstantTimer.delay">1</stringProp>
+                <stringProp name="RandomTimer.range">4000</stringProp>
+              </UniformRandomTimer>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET /lta/web/controller/mail/agent/reply/getemaildetails.jsp?" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="activityId" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${lt_inbox_actid_6_g1}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">activityId</stringProp>
+                  </elementProp>
+                  <elementProp name="toBeUnlockedActivityIds" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${lt_inbox_actid_11_g1}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">toBeUnlockedActivityIds</stringProp>
+                  </elementProp>
+                  <elementProp name="activityMode" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">100</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">activityMode</stringProp>
+                  </elementProp>
+                  <elementProp name="deptId" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${lt_dept_id}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">deptId</stringProp>
+                  </elementProp>
+                  <elementProp name="lastActionReason" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">I18N_CASEMGMT_ACTION_SAVE_DRAFT</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">lastActionReason</stringProp>
+                  </elementProp>
+                  <elementProp name="activityType" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">activityType</stringProp>
+                  </elementProp>
+                  <elementProp name="activitySubType" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">activitySubType</stringProp>
+                  </elementProp>
+                  <elementProp name="language" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">en</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">language</stringProp>
+                  </elementProp>
+                  <elementProp name="country" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">us</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">country</stringProp>
+                  </elementProp>
+                  <elementProp name="__time__" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">1484052988590</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">__time__</stringProp>
+                  </elementProp>
+                  <elementProp name="_reqId_" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">pl_trcontentmail_0_ms__id86_1484045500741_11</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">_reqId_</stringProp>
+                  </elementProp>
+                  <elementProp name="__eg_request_token__" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${lt_X-companyname-csrf}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">__eg_request_token__</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${lt_server_name}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/lta/web/controller/mail/agent/reply/getemaildetails.jsp?</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-us</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">*/*</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko</stringProp>
+                  </elementProp>
+                  <elementProp name="DNT" elementType="Header">
+                    <stringProp name="Header.name">DNT</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Pragma" elementType="Header">
+                    <stringProp name="Header.name">Pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="X-Requested-With" elementType="Header">
+                    <stringProp name="Header.name">X-Requested-With</stringProp>
+                    <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://${lt_server_name}/lta/web/view/mail/agent/reply/replybody.htm</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+                <stringProp name="ConstantTimer.delay">1</stringProp>
+                <stringProp name="RandomTimer.range">4000</stringProp>
+              </UniformRandomTimer>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Suggested article" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">lt_suggested_art_id</stringProp>
+                <stringProp name="RegexExtractor.regex">(result.suggestedArticleIds)[ ]{1,}=[ ]{1,}&apos;(.+)&apos;</stringProp>
+                <stringProp name="RegexExtractor.template">$2$</stringProp>
+                <stringProp name="RegexExtractor.default">400000000008297</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET /lta/web/controller/mail/agent/reply/getsuggestedarticledetails.jsp" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="__eg_request_token__" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">__eg_request_token__</stringProp>
+                    <stringProp name="Argument.value">${lt_X-companyname-csrf}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="_reqId_" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">_reqId_</stringProp>
+                    <stringProp name="Argument.value">pl_trcontentmail_0_ms__id12_1476835037633_5</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="article_ids" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">article_ids</stringProp>
+                    <stringProp name="Argument.value">${lt_suggested_art_id}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="language" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">language</stringProp>
+                    <stringProp name="Argument.value">en</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="country" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">us</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">country</stringProp>
+                  </elementProp>
+                  <elementProp name="_time_" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">1483534470132</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">_time_</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${lt_server_name}</stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/lta/web/controller/mail/agent/reply/getsuggestedarticledetails.jsp?</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-us</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">*/*</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko</stringProp>
+                  </elementProp>
+                  <elementProp name="DNT" elementType="Header">
+                    <stringProp name="Header.name">DNT</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Pragma" elementType="Header">
+                    <stringProp name="Header.name">Pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="X-Requested-With" elementType="Header">
+                    <stringProp name="Header.name">X-Requested-With</stringProp>
+                    <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://${lt_server_name}/lta/web/view/mail/agent/reply/replybody.htm</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+                <stringProp name="ConstantTimer.delay">1</stringProp>
+                <stringProp name="RandomTimer.range">4000</stringProp>
+              </UniformRandomTimer>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
