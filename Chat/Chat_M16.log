@@ -1,0 +1,109 @@
+2022-07-07 12:58:05,073 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2022-07-07 12:58:05,102 INFO o.a.j.JMeter: Loading user properties from: C:\Software\apache-jmeter-5.4.1\bin\user.properties
+2022-07-07 12:58:05,104 INFO o.a.j.JMeter: Loading system properties from: C:\Software\apache-jmeter-5.4.1\bin\system.properties
+2022-07-07 12:58:05,123 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
+2022-07-07 12:58:05,124 INFO o.a.j.JMeter: Version 5.4.1
+2022-07-07 12:58:05,124 INFO o.a.j.JMeter: java.version=15.0.1
+2022-07-07 12:58:05,124 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2022-07-07 12:58:05,125 INFO o.a.j.JMeter: os.name=Windows 10
+2022-07-07 12:58:05,125 INFO o.a.j.JMeter: os.arch=amd64
+2022-07-07 12:58:05,177 INFO o.a.j.JMeter: os.version=10.0
+2022-07-07 12:58:05,178 INFO o.a.j.JMeter: file.encoding=Cp1252
+2022-07-07 12:58:05,178 INFO o.a.j.JMeter: java.awt.headless=null
+2022-07-07 12:58:05,178 INFO o.a.j.JMeter: Max memory     =6442450944
+2022-07-07 12:58:05,179 INFO o.a.j.JMeter: Available Processors =4
+2022-07-07 12:58:05,208 INFO o.a.j.JMeter: Default Locale=English (EN)
+2022-07-07 12:58:05,210 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2022-07-07 12:58:05,210 INFO o.a.j.JMeter: JMeterHome=C:\Software\apache-jmeter-5.4.1
+2022-07-07 12:58:05,210 INFO o.a.j.JMeter: user.dir  =C:\GitHub\Personal\Jmeter-AdvancedScripts\Chat\Chat
+2022-07-07 12:58:05,211 INFO o.a.j.JMeter: PWD       =C:\GitHub\Personal\Jmeter-AdvancedScripts\Chat\Chat
+2022-07-07 12:58:05,224 INFO o.a.j.JMeter: IP: 192.168.1.97 Name: SuchitasPC FullName: host.docker.internal
+2022-07-07 12:58:05,592 INFO o.a.j.JMeter: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.IntelliJTheme
+2022-07-07 12:58:06,385 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2022-07-07 12:58:10,012 WARN o.j.r.PluginManager: Found JAR conflict: C:\Software\apache-jmeter-5.4.1\lib\ext\jmeter-plugins-casutg-2.9.jar and C:\Software\apache-jmeter-5.4.1\lib\ext\jmeter-plugins-casutg-2.10.jar
+2022-07-07 12:58:10,427 INFO o.a.j.JMeter: Loading file: Chat_M16.jmx
+2022-07-07 12:58:10,429 INFO o.a.j.s.FileServer: Default base='C:\GitHub\Personal\Jmeter-AdvancedScripts\Chat\Chat'
+2022-07-07 12:58:10,431 INFO o.a.j.s.FileServer: Set new base='C:\GitHub\Personal\Jmeter-AdvancedScripts\Chat\Chat'
+2022-07-07 12:58:10,554 INFO o.j.r.JARSourceHTTP: Found cached repo
+2022-07-07 12:58:10,975 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2022-07-07 12:58:10,993 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2022-07-07 12:58:10,996 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2022-07-07 12:58:10,998 INFO o.a.j.s.SaveService: Loading file: Chat_M16.jmx
+2022-07-07 12:58:11,372 INFO o.j.r.PluginManager: Plugins Status: [jpgc-graphs-basic=2.0, jpgc-graphs-additional=2.0, bzm-http2-legacy=1.6.2, jpgc-casutg=2.10, di-kafkameter=1.0, jpgc-dummy=0.4, kafkameter=0.2.0, jmeter.backendlistener.kafka=1.0.0, jpgc-mergeresults=2.1, jpgc-plugins-manager=1.7, bzm-random-csv=0.8, jpgc-webdriver=3.3, jpgc-tst=2.5, jmeter-core=5.4.1, jmeter-ftp=5.4.1, jmeter-http=5.4.1, jmeter-jdbc=5.4.1, jmeter-jms=5.4.1, jmeter-junit=5.4.1, jmeter-java=5.4.1, jmeter-ldap=5.4.1, jmeter-mail=5.4.1, jmeter-mongodb=5.4.1, jmeter-native=5.4.1, jmeter-tcp=5.4.1, jmeter-components=5.4.1]
+2022-07-07 12:58:12,203 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
+2022-07-07 12:58:12,206 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2022-07-07 12:58:12,216 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2022-07-07 12:58:12,217 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2022-07-07 12:58:12,217 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2022-07-07 12:58:12,217 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2022-07-07 12:58:12,218 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2022-07-07 12:58:12,218 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2022-07-07 12:58:13,649 INFO o.a.j.s.FileServer: Set new base='C:\GitHub\Personal\Jmeter-AdvancedScripts\Chat\Chat'
+2022-07-07 12:58:17,565 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2022-07-07 12:58:17,566 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2022-07-07 12:58:17,567 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2022-07-07 12:58:17,567 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2022-07-07 12:58:17,771 INFO o.a.j.v.ViewResultsFullVisualizer: Add JavaFX to your Java installation if you want to use renderer: org.apache.jmeter.visualizers.RenderInBrowser
+2022-07-07 12:58:18,091 INFO o.a.j.v.ViewResultsFullVisualizer: Add JavaFX to your Java installation if you want to use renderer: org.apache.jmeter.visualizers.RenderInBrowser
+2022-07-07 12:58:18,873 INFO o.a.j.v.ViewResultsFullVisualizer: Add JavaFX to your Java installation if you want to use renderer: org.apache.jmeter.visualizers.RenderInBrowser
+2022-07-07 12:58:19,354 WARN o.a.j.u.JMeterUtils: no icon for toolbar/19x19arrow-right-3.png
+2022-07-07 12:58:19,445 WARN o.a.j.v.ViewResultsFullVisualizer: Error loading result renderer: org.apache.jmeter.visualizers.RenderInBrowser
+java.lang.NoClassDefFoundError: javafx/scene/Parent
+	at java.lang.Class.forName0(Native Method) ~[?:?]
+	at java.lang.Class.forName(Class.java:377) ~[?:?]
+	at com.blazemeter.jmeter.http2.visualizers.ViewResultsFullVisualizer.createComboRender(ViewResultsFullVisualizer.java:396) ~[jmeter-bzm-http2-1.6.2.jar:?]
+	at com.blazemeter.jmeter.http2.visualizers.ViewResultsFullVisualizer.createLeftPanel(ViewResultsFullVisualizer.java:322) ~[jmeter-bzm-http2-1.6.2.jar:?]
+	at com.blazemeter.jmeter.http2.visualizers.ViewResultsFullVisualizer.init(ViewResultsFullVisualizer.java:283) ~[jmeter-bzm-http2-1.6.2.jar:?]
+	at com.blazemeter.jmeter.http2.visualizers.ViewResultsFullVisualizer.<init>(ViewResultsFullVisualizer.java:118) ~[jmeter-bzm-http2-1.6.2.jar:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:481) ~[?:?]
+	at org.apache.jmeter.gui.util.MenuFactory.getGUIComponent(MenuFactory.java:207) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.gui.util.MenuFactory.initializeMenus(MenuFactory.java:151) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.gui.util.MenuFactory.<clinit>(MenuFactory.java:107) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.control.gui.TestPlanGui.createPopupMenu(TestPlanGui.java:94) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.gui.tree.JMeterTreeNode.createPopupMenu(JMeterTreeNode.java:184) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.gui.action.EditCommand.doAction(EditCommand.java:46) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:87) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:69) ~[ApacheJMeter_core.jar:5.4.1]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316) [?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770) [?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:721) [?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:715) [?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:391) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:740) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:117) ~[?:?]
+	at java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:190) ~[?:?]
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:235) ~[?:?]
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:233) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:312) [?:?]
+	at java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:233) ~[?:?]
+	at java.awt.Dialog.show(Dialog.java:1070) ~[?:?]
+	at java.awt.Component.show(Component.java:1717) ~[?:?]
+	at java.awt.Component.setVisible(Component.java:1664) ~[?:?]
+	at java.awt.Window.setVisible(Window.java:1028) ~[?:?]
+	at java.awt.Dialog.setVisible(Dialog.java:1005) ~[?:?]
+	at org.apache.jmeter.SplashScreen.lambda$showScreen$0(SplashScreen.java:95) ~[ApacheJMeter_core.jar:5.4.1]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:316) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:721) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:715) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:391) [?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85) [?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:740) [?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) [?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) [?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) [?:?]
+Caused by: java.lang.ClassNotFoundException: javafx.scene.Parent
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:435) ~[?:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:589) ~[?:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:522) ~[?:?]
+	... 53 more
